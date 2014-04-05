@@ -27,7 +27,7 @@ public class MyActivity extends Activity implements View.OnClickListener {
 
                 break;
             case R.id.tonybutton:
-                
+
                 break;
             default:
                 break;
