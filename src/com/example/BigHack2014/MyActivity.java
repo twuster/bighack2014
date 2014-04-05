@@ -2,8 +2,9 @@ package com.example.BigHack2014;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 
-public class MyActivity extends Activity {
+public class MyActivity extends Activity implements View.OnClickListener {
     /**
      * Called when the activity is first created.
      */
@@ -11,5 +12,27 @@ public class MyActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()){
+            case R.id.johnbutton:
+
+                break;
+            case R.id.vincentbutton:
+
+                break;
+            case R.id.nishantbutton:
+
+                break;
+            case R.id.tonybutton:
+                
+                break;
+            default:
+                break;
+
+
+        }
     }
 }
