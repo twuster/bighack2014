@@ -24,7 +24,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 public class DrawMapActivity extends Activity
         implements
@@ -38,7 +38,7 @@ public class DrawMapActivity extends Activity
     private GoogleMap mMap;
     private LocationClient mLocationClient;
     private int stat;
-    private LinkedList<LatLng> points;
+    private ArrayList<LatLng> points;
     Location mCurrentLocation;
 
 
@@ -48,7 +48,7 @@ public class DrawMapActivity extends Activity
         setContentView(R.layout.activity_mapdraw);
         findViewById(R.id.set_path_button).setOnClickListener(this);
         stat = 0;
-        points = new LinkedList<LatLng>();
+        points = new ArrayList<LatLng>();
         mLocationClient = new LocationClient(this, this, this);
     }
 
@@ -99,7 +99,10 @@ public class DrawMapActivity extends Activity
                 stat = STAT_PATH;
                 break;
             case (STAT_PATH):
-                // pass
+                Intent i = new Intent(this, CompassActivity.class);
+                i.putParcelableArrayListExtra("points", points);
+                this.finish();
+                startActivity(i);
                 break;
         }
     }
@@ -136,7 +139,7 @@ public class DrawMapActivity extends Activity
         LatLng latLng = marker.getPosition();
         if (points.size() > 0) {
             PolylineOptions options = new PolylineOptions()
-                    .add(points.peekLast())
+                    .add(points.get(points.size() - 1))
                     .add(latLng);
             mMap.addPolyline(options);
         }
