@@ -3,16 +3,13 @@ package com.example.BigHack2014;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
 //import com.kindredprints.android.sdk.KindredOrderFlow;
 //import com.kindredprints.android.sdk.KLOCPhoto; // use this
 //import com.kindredprints.android.sdk.KindredOrderFlowActivity;
-
-import java.io.FileOutputStream;
 
 public class DetailView extends Activity{
 
@@ -20,7 +17,7 @@ public class DetailView extends Activity{
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
+        super.onCreate(savedInstanceState);
         context = this;
         setContentView(R.layout.detail_view);
 
@@ -54,11 +51,14 @@ public class DetailView extends Activity{
 
         Intent intent = getIntent();
 //        super.onCreate(savedInstanceState);
-        String name = (String) intent.getExtras().get("message");
+        Bundle extras = intent.getExtras();
+        String name = (String) extras.get("message");
+        String bitmap = (String) extras.get("bitmap");
+        String date = (String) extras.get("date");
 //        String date = (String) intent.getExtras().get("date");
 //        String map = (String) intent.getExtras().get("map");
-        TextView textview = (TextView) findViewById(R.id.textView);
-        textview.setText(name);
+        TextView nameText = (TextView) findViewById(R.id.nameText);
+        nameText.setText(name);
 //        date.setText(date);
 //        mapView.setText(map);
     }

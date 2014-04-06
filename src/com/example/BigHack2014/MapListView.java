@@ -18,6 +18,8 @@ import java.util.List;
 public class MapListView extends MyActivity {
 
     public Context context;
+    private RunsDataSource datasource;
+    List<Run> runList;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,16 +41,15 @@ public class MapListView extends MyActivity {
 
         final ListView listview = (ListView) findViewById(R.id.list_view);
 //        replace below with call to database
-        String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
-                "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
-                "Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
-                "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2",
-                "Android", "iPhone", "WindowsMobile" };
-
         final ArrayList<String> list = new ArrayList<String>();
-        for (int i = 0; i < values.length; ++i) {
-            list.add(values[i]);
+
+        datasource = new RunsDataSource(this);
+        datasource.open();
+        runList = datasource.getAllRuns();
+        for (int i=0; i < runList.size(); i ++){
+            list.add(runList.get(i).getName());
         }
+
         final StableArrayAdapter adapter = new StableArrayAdapter(this,
                 android.R.layout.simple_list_item_1, list);
         listview.setAdapter(adapter);
@@ -62,9 +63,10 @@ public class MapListView extends MyActivity {
 //                final String item2 = (String) parent.getItemAtPosition(position);
 //                final String item3 = (String) parent.getItemAtPosition(position);
                 Intent i = new Intent(context, DetailView.class);
+                Run run = runList.get(position);
                 i.putExtra("message", item);
-//                i.putExtra("date", item2);
-//                i.putExtra("map", item3);
+                i.putExtra("bitmap", run.getBitmap());
+                i.putExtra("date", run.getDate());
                 context.startActivity(i);
             }
 

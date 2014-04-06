@@ -15,11 +15,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e01e9ee2-17b2-47da-bf4a-ccdb7f925138" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/BigHack2014/CongratulationActivity.java" afterPath="$PROJECT_DIR$/src/com/example/BigHack2014/CongratulationActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/BigHack2014/MySQLiteHelper.java" afterPath="$PROJECT_DIR$/src/com/example/BigHack2014/MySQLiteHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/BigHack2014/Run.java" afterPath="$PROJECT_DIR$/src/com/example/BigHack2014/Run.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/BigHack2014/RunsDataSource.java" afterPath="$PROJECT_DIR$/src/com/example/BigHack2014/RunsDataSource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/congratulation_layout.xml" afterPath="$PROJECT_DIR$/res/layout/congratulation_layout.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/BigHack2014/DetailView.java" afterPath="$PROJECT_DIR$/src/com/example/BigHack2014/DetailView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/BigHack2014/MapListView.java" afterPath="$PROJECT_DIR$/src/com/example/BigHack2014/MapListView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/detail_view.xml" afterPath="$PROJECT_DIR$/res/layout/detail_view.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BigHack2014.iws" />
@@ -84,19 +82,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MyActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/MyActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="20" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="1116">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="17" selection-start="1510" selection-end="1510" vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="864">
+            <state line="29" column="17" selection-start="1653" selection-end="1653" vertical-scroll-proportion="0.0" vertical-offset="522" max-vertical-offset="900">
               <folding />
             </state>
           </provider>
@@ -105,7 +94,7 @@
       <file leaf-file-name="MySQLiteHelper.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/MySQLiteHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="882">
+            <state line="45" column="0" selection-start="1104" selection-end="1597" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="882">
               <folding />
             </state>
           </provider>
@@ -114,26 +103,61 @@
       <file leaf-file-name="Run.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/Run.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="990">
+            <state line="21" column="0" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="702">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RunsDataSource.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="RunsDataSource.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/RunsDataSource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="31" selection-start="3018" selection-end="3018" vertical-scroll-proportion="0.5056543" vertical-offset="1109" max-vertical-offset="1836">
+            <state line="65" column="30" selection-start="2171" selection-end="2171" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1836">
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MapListView.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/MapListView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="68" column="50" selection-start="2449" selection-end="2449" vertical-scroll-proportion="0.0" vertical-offset="321" max-vertical-offset="1908">
+              <folding>
+                <element signature="e#1286#1294#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DetailView.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/DetailView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="60" column="31" selection-start="2386" selection-end="2386" vertical-scroll-proportion="0.6381909" vertical-offset="609" max-vertical-offset="1206">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detail_view.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/detail_view.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="33" selection-start="1338" selection-end="1338" vertical-scroll-proportion="-14.884615" vertical-offset="279" max-vertical-offset="828">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="CongratulationActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/CongratulationActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="49" selection-start="1981" selection-end="1982" vertical-scroll-proportion="0.0" vertical-offset="972" max-vertical-offset="2070">
-              <folding />
+            <state line="45" column="8" selection-start="1533" selection-end="1598" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="1710">
+              <folding>
+                <element signature="e#1863#2458#0" expanded="true" />
+                <element signature="e#2439#2440#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -192,6 +216,9 @@
         <option value="$PROJECT_DIR$/src/com/example/BigHack2014/CongratulationActivity.java" />
         <option value="$PROJECT_DIR$/src/com/example/BigHack2014/MySQLiteHelper.java" />
         <option value="$PROJECT_DIR$/src/com/example/BigHack2014/RunsDataSource.java" />
+        <option value="$PROJECT_DIR$/src/com/example/BigHack2014/MapListView.java" />
+        <option value="$PROJECT_DIR$/res/layout/detail_view.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/BigHack2014/DetailView.java" />
       </list>
     </option>
   </component>
@@ -526,11 +553,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1926" height="1082" extended-state="7" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -540,7 +568,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32987553" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32987553" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32987553" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -548,7 +576,6 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29286474" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32987553" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -611,7 +638,10 @@
     <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/CongratulationActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="54" column="49" selection-start="1981" selection-end="1982" vertical-scroll-proportion="0.0" vertical-offset="972" max-vertical-offset="2070">
-          <folding />
+          <folding>
+            <element signature="e#1863#2458#0" expanded="true" />
+            <element signature="e#2439#2440#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -673,7 +703,10 @@
     <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/CongratulationActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="54" column="49" selection-start="1981" selection-end="1982" vertical-scroll-proportion="0.0" vertical-offset="667" max-vertical-offset="2070">
-          <folding />
+          <folding>
+            <element signature="e#1863#2458#0" expanded="true" />
+            <element signature="e#2439#2440#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -719,7 +752,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/MyActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="20" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="1008">
+        <state line="14" column="7" selection-start="368" selection-end="368" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="1242">
           <folding />
         </state>
       </provider>
@@ -736,7 +769,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="17" selection-start="1510" selection-end="1510" vertical-scroll-proportion="0.0" vertical-offset="263" max-vertical-offset="864">
+        <state line="29" column="17" selection-start="1653" selection-end="1653" vertical-scroll-proportion="0.0" vertical-offset="522" max-vertical-offset="900">
           <folding />
         </state>
       </provider>
@@ -748,23 +781,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/CongratulationActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/MySQLiteHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="49" selection-start="1981" selection-end="1982" vertical-scroll-proportion="0.0" vertical-offset="667" max-vertical-offset="2070">
+        <state line="45" column="0" selection-start="1104" selection-end="1597" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="882">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/MySQLiteHelper.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/CongratulationActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="882">
-          <folding />
+        <state line="45" column="8" selection-start="1533" selection-end="1598" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="1710">
+          <folding>
+            <element signature="e#1863#2458#0" expanded="true" />
+            <element signature="e#2439#2440#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/RunsDataSource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="31" selection-start="3018" selection-end="3018" vertical-scroll-proportion="0.5056543" vertical-offset="1109" max-vertical-offset="1836">
+        <state line="65" column="30" selection-start="2171" selection-end="2171" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1836">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/MapListView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="50" selection-start="2449" selection-end="2449" vertical-scroll-proportion="0.0" vertical-offset="321" max-vertical-offset="1908">
+          <folding>
+            <element signature="e#1286#1294#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/detail_view.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="33" selection-start="1338" selection-end="1338" vertical-scroll-proportion="-14.884615" vertical-offset="279" max-vertical-offset="828">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/DetailView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="31" selection-start="2386" selection-end="2386" vertical-scroll-proportion="0.6381909" vertical-offset="609" max-vertical-offset="1206">
           <folding />
         </state>
       </provider>
