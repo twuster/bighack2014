@@ -19,6 +19,7 @@
             android:background="@color/almost_black"
             android:textColor="@color/white"
             android:textSize="40sp"
+            android:textStyle="bold"
             android:text="@string/app_name"
             android:id="@+id/button"
             android:layout_gravity="center_horizontal"/>
