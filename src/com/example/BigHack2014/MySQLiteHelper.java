@@ -12,15 +12,18 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     public static final String TABLE_MAPS = "maps";
     public static final String COLUMN_ID = "_id";
-    public static final String COLUMN_RUN = "run";
+    public static final String COLUMN_BITMAP = "bitmap";
+    public static final String COLUMN_DATE = "date";
+    public static final String COLUMN_NAME = "name";
 
-    private static final String DATABASE_NAME = "commments.db";
+    private static final String DATABASE_NAME = "runs.db";
     private static final int DATABASE_VERSION = 1;
 
     // Database creation sql statement
     private static final String DATABASE_CREATE = "create table "
             + TABLE_MAPS + "(" + COLUMN_ID
-            + " integer primary key autoincrement, " + COLUMN_RUN
+            + " integer primary key autoincrement, " + COLUMN_BITMAP + " text not null," + COLUMN_DATE
+            + " text not null," + COLUMN_NAME
             + " text not null);";
 
     public MySQLiteHelper(Context context) {
