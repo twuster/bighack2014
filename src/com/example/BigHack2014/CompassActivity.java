@@ -16,6 +16,10 @@ import com.google.android.gms.common.GooglePlayServicesClient;
 import com.google.android.gms.location.LocationClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.maps.model.LatLng;
+
+import java.util.LinkedList;
+import java.util.ListIterator;
 
 /**
  * Created by Nishant on 4/5/14.
@@ -29,6 +33,11 @@ public class CompassActivity extends Activity implements GooglePlayServicesClien
     private LocationRequest locationRequest;
     private float[] gravity;
     private float[] geomagnetic;
+    private boolean onPath = false;
+    private LinkedList<LatLng> points;
+    private ListIterator<LatLng> path;
+    private Location currentDest;
+    private LinkedList<LatLng> pointsVisited = new LinkedList<LatLng>();
 
     @Override
     public void onStart(){
@@ -99,6 +108,31 @@ public class CompassActivity extends Activity implements GooglePlayServicesClien
     @Override
     public void onLocationChanged(Location location){
         this.currentLocation = location;
+        float distance = location.distanceTo(currentDest);
+        if (distance < 5){
+            if (!onPath){
+                //TODO: give "Start run" prompt in view
+                onPath = true;
+            }
+
+            LatLng nextDest = new LatLng(0.0, 0.0);
+            if (path.hasNext()){
+                nextDest = path.next();
+            } else {
+                //TODO: go to congratulatory page
+                //TODO: make polyline + finish activity
+            }
+            Location nextLocation = new Location("");
+            nextLocation.setLatitude(nextDest.latitude);
+            nextLocation.setLongitude(nextDest.longitude);
+            currentDest = nextLocation;
+        }
+        float bearing = bearingToPoint((float)currentDest.getLatitude(), (float)currentDest.getLongitude());
+        if (onPath){
+            pointsVisited.add(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()));
+        }
+        //TODO: Update view with new bearing
+
     }
 
     @Override
