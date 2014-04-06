@@ -2,11 +2,7 @@ package com.example.BigHack2014;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.hardware.GeomagneticField;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
+import android.hardware.*;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -18,7 +14,6 @@ import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient;
 import com.google.android.gms.location.LocationClient;
@@ -27,7 +22,6 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.ListIterator;
 
 public class CompassActivity extends Activity implements SensorEventListener, GooglePlayServicesClient.ConnectionCallbacks,
@@ -150,7 +144,7 @@ public class CompassActivity extends Activity implements SensorEventListener, Go
                 } else {
                     alert.setText("Run complete!");
                     button.setText("Complete!");
-                    button.setBackgroundColor(R.color.button_green);
+                    button.setBackgroundColor(getResources().getColor(R.color.button_green));
                     mSensorManager.unregisterListener(this);
                     return;
 
@@ -193,7 +187,7 @@ public class CompassActivity extends Activity implements SensorEventListener, Go
     }
 
     public void onClickComplete(View view) {
-        Intent i = new Intent(this, CompassActivity.class);
+        Intent i = new Intent(this, CongratulationActivity.class);
         i.putParcelableArrayListExtra("points", pointsVisited);
         i.putExtra("time", SystemClock.elapsedRealtime() - timer.getBase());
         this.finish();

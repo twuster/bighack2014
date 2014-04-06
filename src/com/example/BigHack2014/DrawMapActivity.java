@@ -90,19 +90,29 @@ public class DrawMapActivity extends Activity
 
     @Override
     public void onClick(View v) {
-        switch (stat) {
-            case (STAT_NEW):
-                if (setNew()) stat = STAT_START;
-                break;
-            case (STAT_START):
-                ((Button) findViewById(R.id.set_path_button)).setText("Run this path");
-                stat = STAT_PATH;
-                break;
-            case (STAT_PATH):
-                Intent i = new Intent(this, CompassActivity.class);
-                i.putParcelableArrayListExtra("points", points);
-                this.finish();
-                startActivity(i);
+        switch(v.getId()){
+            case R.id.set_path_button:
+                switch (stat) {
+                    case (STAT_NEW):
+                        Log.e("stat", "" +stat);
+                        if (setNew()) stat = STAT_START;
+                        break;
+                    case (STAT_START):
+                        Log.e("stat", "" +stat);
+                        stat = STAT_PATH;
+                        ((Button) findViewById(R.id.set_path_button)).setText("Run this path");
+                        break;
+                    case (STAT_PATH):
+                        Log.e("stat", "pressed");
+                        Intent i = new Intent(this, CompassActivity.class);
+                        i.putParcelableArrayListExtra("points", points);
+                        startActivity(i);
+                        break;
+                    default:
+                        break;
+
+                }
+            default:
                 break;
         }
     }
@@ -174,7 +184,7 @@ public class DrawMapActivity extends Activity
             ((Button) findViewById(R.id.set_path_button)).setText("Set as Start");
             return true;
         }
-        Toast.makeText(this, "getMyLocation() return null", 2).show();
+        Toast.makeText(this, "getMyLocation() return null", Toast.LENGTH_SHORT).show();
         return false;
     }
 
