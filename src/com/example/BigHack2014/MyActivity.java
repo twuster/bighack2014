@@ -22,6 +22,12 @@ public class MyActivity extends Activity implements View.OnClickListener{
 
         Button tonyButton = (Button)findViewById(R.id.tonybutton);
         tonyButton.setOnClickListener(this);
+
+        Button vincentButton = (Button)findViewById(R.id.vincentbutton);
+        vincentButton.setOnClickListener(this);
+
+        Button nishantButton = (Button)findViewById(R.id.nishantbutton);
+        nishantButton.setOnClickListener(this);
     }
 
     @Override
