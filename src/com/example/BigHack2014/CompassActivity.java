@@ -1,7 +1,6 @@
 package com.example.BigHack2014;
 
 import android.app.Activity;
-import android.content.Context;
 import android.hardware.GeomagneticField;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -13,6 +12,7 @@ import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient;
@@ -24,165 +24,94 @@ import com.google.android.gms.maps.model.LatLng;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
-/**
- * Created by Nishant on 4/5/14.
- */
-public class CompassActivity extends Activity implements GooglePlayServicesClient.ConnectionCallbacks,
-    GooglePlayServicesClient.OnConnectionFailedListener, LocationListener, SensorEventListener {
+public class CompassActivity extends Activity implements SensorEventListener, GooglePlayServicesClient.ConnectionCallbacks,
+    GooglePlayServicesClient.OnConnectionFailedListener, LocationListener {
 
-    private static SensorManager sensorManager;
-    private static LocationClient locationClient;
+    // define the display assembly compass picture
+    private ImageView image;
+
+    // record the compass picture angle turned
+    private float currentDegree = 0f;
+
+    // device sensor manager
+    private SensorManager mSensorManager;
+
     private Location currentLocation;
     private LocationRequest locationRequest;
-    private float[] gravity;
-    private float[] geomagnetic;
+    private static LocationClient locationClient;
     private boolean onPath = false;
     private LinkedList<LatLng> points;
     private ListIterator<LatLng> path;
     private Location currentDest;
     private LinkedList<LatLng> pointsVisited = new LinkedList<LatLng>();
-    private float currentDegree = (float) 0.0;
-    private int counter = 0;
+
+    TextView tvHeading;
 
     @Override
-    public void onStart(){
-        super.onStart();
-        locationClient.connect();
-        sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_GAME);
-        sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD), SensorManager.SENSOR_DELAY_GAME);
-    }
-
-    /**
-     * Called when the activity is first created.
-     */
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.compass);
 
-        points = new LinkedList<LatLng>();
-        points.add(new LatLng(0.0, 0.0));
-        path = points.listIterator();
+        //
+        image = (ImageView) findViewById(R.id.imageViewCompass);
 
-        Location dest = new Location("");
-        LatLng d = path.next();
-        dest.setLatitude(d.latitude);
-        dest.setLongitude(d.longitude);
-        currentDest = dest;
+        // TextView that will tell the user what degree is he heading
+        tvHeading = (TextView) findViewById(R.id.tvHeading);
 
-        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        // initialize your android device sensor capabilities
+        mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+
         locationClient = new LocationClient(this, this, this);
         locationRequest = LocationRequest.create();
         locationRequest.setInterval(250);
         locationRequest.setFastestInterval(250);
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
 
-    }
+        points = new LinkedList<LatLng>();
+        points.add(new LatLng(0f, 0f));
+        path = points.listIterator();
+        LatLng ll = path.next();
+        currentDest = new Location("");
+        currentDest.setLatitude(0f);
+        currentDest.setLongitude(0f);
 
-    private float bearingToPoint(float lat, float lon) {
-        Location nextPoint = new Location("");
-        nextPoint.setLatitude(lat);
-        nextPoint.setLongitude(lon);
-        float bearing = currentLocation.bearingTo(nextPoint);
-        if (gravity != null && geomagnetic != null) {
-            Log.d("Bearing", "Finding orientation!");
-            float R[] = new float[9];
-            float I[] = new float[9];
-            boolean success = SensorManager.getRotationMatrix(R, I, gravity, geomagnetic);
-            float orientation[] = new float[3];
-            if (success) {
-                SensorManager.getOrientation(R, orientation);
-            }
-            float azimuth = orientation[0];
-            Log.d("Azimuth", Float.toString(azimuth));
-            float heading = (float) (azimuth * (180.0 / Math.PI));
-            GeomagneticField geomagneticField = new GeomagneticField(
-                                                       (float) currentLocation.getLatitude(),
-                                                       (float) currentLocation.getLongitude(),
-                                                       (float) currentLocation.getAltitude(),
-                                                       System.currentTimeMillis());
-            float declination = geomagneticField.getDeclination();
-            float trueHeading = heading + declination;
-//            return trueHeading;
-            return (float)(trueHeading * -1.0) + bearing; //degrees to location
-        } else {
-            Log.d("Gravity or Geo", "null");
-        }
-        return (float) 0.0;
-    }
 
-    private void updateView(float bearing){
-
-        RotateAnimation ra = new RotateAnimation(
-                currentDegree,
-                bearing,
-                Animation.RELATIVE_TO_SELF, 0.5f,
-                Animation.RELATIVE_TO_SELF, 0.5f
-        );
-
-        ra.setDuration(500);
-        ra.setFillAfter(true);
-
-        ImageView image = (ImageView) findViewById(R.id.imageViewCompass);
-        image.startAnimation(ra);
-        currentDegree = bearing;
-
-    }
-
-    private void incrementCounter(){
-        counter = (counter + 1) % 100;
-    }
-
-    @Override
-    public void onConnected(Bundle dataBundle) {
-        onLocationChanged(locationClient.getLastLocation());
-        locationClient.requestLocationUpdates(locationRequest, this);
-    }
-
-    @Override
-    public void onDisconnected(){
-        return;
-    }
-
-    @Override
-    public void onConnectionFailed(ConnectionResult connectionResult){
-         Log.e("Connection Error", connectionResult.toString());
-    }
-
-    @Override
-    public void onLocationChanged(Location location){
-        Log.d("Location", "location changed");
-        this.currentLocation = location;
 
     }
 
     @Override
-    public void onStop(){
-        if (locationClient.isConnected()){
-            locationClient.removeLocationUpdates(this);
-            locationClient.disconnect();
-        }
-        super.onStop();
+    public void onStart(){
+        super.onStart();
+        locationClient.connect();
+        mSensorManager.registerListener(this, mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION), SensorManager.SENSOR_DELAY_GAME);
     }
 
     @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy) { }
+    protected void onResume() {
+        super.onResume();
+
+        // for the system's orientation sensor registered listeners
+        mSensorManager.registerListener(this, mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION),
+                SensorManager.SENSOR_DELAY_GAME);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        // to stop the listener and save battery
+        mSensorManager.unregisterListener(this);
+    }
 
     @Override
     public void onSensorChanged(SensorEvent event) {
 
+        // get the angle around the z-axis rotated
+        float north = Math.round(event.values[0]);
 
-        switch (event.sensor.getType()){
-            case Sensor.TYPE_ACCELEROMETER:
-                gravity = event.values.clone();
-                break;
-            case Sensor.TYPE_MAGNETIC_FIELD:
-                geomagnetic = event.values.clone();
-                break;
-        }
 
-        if (locationClient.isConnected()) {
+        float bearing = 0f;
+        if (locationClient.isConnected() && currentDest != null) {
             float distance = currentLocation.distanceTo(currentDest);
             if (distance < 5){
                 if (!onPath){
@@ -203,22 +132,72 @@ public class CompassActivity extends Activity implements GooglePlayServicesClien
                 nextLocation.setLongitude(nextDest.longitude);
                 currentDest = nextLocation;
             }
-            float bearing = bearingToPoint((float)currentDest.getLatitude(), (float)currentDest.getLongitude());
-
-            //TODO: Update view with new bearing
-            Log.d("Bearing", Float.toString(bearing));
-            if (bearing < 0) {
-                bearing += 360;
-            }
-            Log.d("New bearing", Float.toString(bearing));
-            if (counter == 0) {
-                updateView((float)(Math.ceil(bearing/5)*5));
-                if (onPath){
-                    pointsVisited.add(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()));
-                }
-            }
-            incrementCounter();
+            bearing = currentLocation.bearingTo(currentDest);
         }
+
+        GeomagneticField geomagneticField = new GeomagneticField(
+                                                   (float) currentLocation.getLatitude(),
+                                                   (float) currentLocation.getLongitude(),
+                                                   (float) currentLocation.getAltitude(),
+                                                   System.currentTimeMillis());
+        float declination = geomagneticField.getDeclination();
+
+        tvHeading.setText("Heading: " + Float.toString(north-declination+bearing) + " degrees");
+
+        // create a rotation animation (reverse turn degree degrees)
+        RotateAnimation ra = new RotateAnimation(
+                currentDegree,
+                -north+bearing+declination,
+                Animation.RELATIVE_TO_SELF, 0.5f,
+                Animation.RELATIVE_TO_SELF,
+                0.5f);
+
+        // how long the animation will take place
+        ra.setDuration(210);
+
+        // set the animation after the end of the reservation status
+        ra.setFillAfter(true);
+
+        // Start the animation
+        image.startAnimation(ra);
+        currentDegree = -north+bearing+declination
+        ;
+
     }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+        // not in use
+    }
+
+    @Override
+    public void onLocationChanged(Location location){
+        currentLocation = location;
+    }
+
+    @Override
+    public void onConnected(Bundle dataBundle) {
+        onLocationChanged(locationClient.getLastLocation());
+        locationClient.requestLocationUpdates(locationRequest, this);
+    }
+
+    @Override
+    public void onStop(){
+        if (locationClient.isConnected()){
+            locationClient.removeLocationUpdates(this);
+            locationClient.disconnect();
+        }
+        super.onStop();
+    }
+
+    @Override
+    public void onDisconnected(){    }
+
+    @Override
+    public void onConnectionFailed(ConnectionResult connectionResult){
+         Log.e("Connection Error", connectionResult.toString());
+    }
+
+
 
 }
