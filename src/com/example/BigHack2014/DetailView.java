@@ -6,9 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-/**
- * Created by vincenttian on 4/5/14.
- */
 public class DetailView extends Activity{
     @Override
     public void onCreate(Bundle savedInstanceState) {
