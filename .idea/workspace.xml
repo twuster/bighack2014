@@ -15,7 +15,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e01e9ee2-17b2-47da-bf4a-ccdb7f925138" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/blue_button.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/blue_button_default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/blue_button_pressed.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/values/colors.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_mapdraw.xml" afterPath="$PROJECT_DIR$/res/layout/activity_mapdraw.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/congratulation_layout.xml" afterPath="$PROJECT_DIR$/res/layout/congratulation_layout.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/detail_view.xml" afterPath="$PROJECT_DIR$/res/layout/detail_view.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/list_view.xml" afterPath="$PROJECT_DIR$/res/layout/list_view.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BigHack2014.iws" />
@@ -80,41 +88,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <file leaf-file-name="blue_button.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/drawable/blue_button.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.54453784" vertical-offset="0" max-vertical-offset="972">
-              <folding>
-                <element signature="e#1135#1153#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MySQLiteHelper.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/MySQLiteHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="0" selection-start="1104" selection-end="1597" vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="936">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="198">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Run.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/Run.java">
+      <file leaf-file-name="colors.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/values/colors.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="990">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="522">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RunsDataSource.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/RunsDataSource.java">
+      <file leaf-file-name="activity_mapdraw.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/activity_mapdraw.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="30" selection-start="2171" selection-end="2171" vertical-scroll-proportion="0.0" vertical-offset="1170" max-vertical-offset="2070">
+            <state line="17" column="22" selection-start="806" selection-end="806" vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="468">
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -139,7 +139,19 @@
       <file leaf-file-name="detail_view.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/detail_view.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="33" selection-start="1338" selection-end="1338" vertical-scroll-proportion="0.0" vertical-offset="279" max-vertical-offset="828">
+            <state line="19" column="28" selection-start="698" selection-end="698" vertical-scroll-proportion="-11.076923" vertical-offset="54" max-vertical-offset="900">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list_view.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/res/layout/list_view.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="8" selection-start="352" selection-end="352" vertical-scroll-proportion="0.30337077" vertical-offset="0" max-vertical-offset="576">
               <folding />
             </state>
           </provider>
@@ -160,7 +172,7 @@
       <file leaf-file-name="congratulation_layout.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/congratulation_layout.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="38" selection-start="651" selection-end="651" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="666">
+            <state line="42" column="0" selection-start="1718" selection-end="1718" vertical-scroll-proportion="-16.615385" vertical-offset="324" max-vertical-offset="900">
               <folding />
             </state>
           </provider>
@@ -172,7 +184,7 @@
       <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="12" selection-start="1329" selection-end="1329" vertical-scroll-proportion="0.0" vertical-offset="558" max-vertical-offset="720">
+            <state line="31" column="12" selection-start="1329" selection-end="1329" vertical-scroll-proportion="-21.461538" vertical-offset="0" max-vertical-offset="720">
               <folding />
             </state>
           </provider>
@@ -205,15 +217,17 @@
       <list>
         <option value="$PROJECT_DIR$/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/src/com/example/BigHack2014/MyActivity.java" />
-        <option value="$PROJECT_DIR$/res/layout/congratulation_layout.xml" />
         <option value="$PROJECT_DIR$/src/com/example/BigHack2014/Run.java" />
         <option value="$PROJECT_DIR$/src/com/example/BigHack2014/CongratulationActivity.java" />
         <option value="$PROJECT_DIR$/src/com/example/BigHack2014/MySQLiteHelper.java" />
         <option value="$PROJECT_DIR$/src/com/example/BigHack2014/RunsDataSource.java" />
         <option value="$PROJECT_DIR$/src/com/example/BigHack2014/MapListView.java" />
-        <option value="$PROJECT_DIR$/res/layout/detail_view.xml" />
         <option value="$PROJECT_DIR$/src/com/example/BigHack2014/DetailView.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/res/layout/congratulation_layout.xml" />
+        <option value="$PROJECT_DIR$/res/layout/activity_mapdraw.xml" />
+        <option value="$PROJECT_DIR$/res/layout/detail_view.xml" />
+        <option value="$PROJECT_DIR$/res/layout/list_view.xml" />
       </list>
     </option>
   </component>
@@ -298,6 +312,24 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BigHack2014" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BigHack2014" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -314,6 +346,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BigHack2014" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BigHack2014" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -361,6 +411,12 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="035e2a7d13ad30a5" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus4" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res/values" />
+      <recent name="$PROJECT_DIR$/res/drawable" />
+    </key>
   </component>
   <component name="RunManager" selected="Android Application.BigHack2014">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
@@ -552,6 +608,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32994652" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -560,17 +617,16 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32987553" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33056134" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29273504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2930481" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32987553" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32987553" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -598,7 +654,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="17" selection-start="1653" selection-end="1653" vertical-scroll-proportion="0.0" vertical-offset="522" max-vertical-offset="900">
           <folding>
-            <element signature="e#1135#1153#0" expanded="true" />
+            <element signature="e#1217#1235#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -686,7 +742,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="17" selection-start="1510" selection-end="1510" vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="864">
           <folding>
-            <element signature="e#1135#1153#0" expanded="true" />
+            <element signature="e#1217#1235#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -750,7 +806,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="17" selection-start="1510" selection-end="1510" vertical-scroll-proportion="0.0" vertical-offset="29" max-vertical-offset="864">
           <folding>
-            <element signature="e#1135#1153#0" expanded="true" />
+            <element signature="e#1217#1235#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -803,26 +859,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="12" selection-start="1329" selection-end="1329" vertical-scroll-proportion="0.0" vertical-offset="188" max-vertical-offset="720">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/congratulation_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="38" selection-start="651" selection-end="651" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="666">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/MyActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="7" selection-start="368" selection-end="368" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="1242">
@@ -838,13 +874,6 @@
     <entry file="file://$PROJECT_DIR$/libs/google_play_services/samples/wallet/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="27" selection-start="977" selection-end="977" vertical-scroll-proportion="0.5142379" vertical-offset="125" max-vertical-offset="1134" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/Run.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="990">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/MySQLiteHelper.java">
@@ -875,16 +904,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/detail_view.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="33" selection-start="1338" selection-end="1338" vertical-scroll-proportion="0.0" vertical-offset="279" max-vertical-offset="828">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/DetailView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="60" column="31" selection-start="2178" selection-end="2178" vertical-scroll-proportion="0.0" vertical-offset="449" max-vertical-offset="1386">
@@ -894,11 +913,82 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.54453784" vertical-offset="0" max-vertical-offset="972">
+        <state line="19" column="64" selection-start="1139" selection-end="1139" vertical-scroll-proportion="0.57478994" vertical-offset="0" max-vertical-offset="1008">
           <folding>
-            <element signature="e#1135#1153#0" expanded="true" />
+            <element signature="e#1217#1235#0" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/drawable/blue_button.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="573">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/Run.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="23" selection-start="778" selection-end="778" vertical-scroll-proportion="0.87731093" vertical-offset="0" max-vertical-offset="702">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="12" selection-start="1329" selection-end="1329" vertical-scroll-proportion="-21.461538" vertical-offset="0" max-vertical-offset="720">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/congratulation_layout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="0" selection-start="1718" selection-end="1718" vertical-scroll-proportion="-16.615385" vertical-offset="324" max-vertical-offset="900">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_mapdraw.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="22" selection-start="806" selection-end="806" vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="468">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/detail_view.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="28" selection-start="698" selection-end="698" vertical-scroll-proportion="-11.076923" vertical-offset="54" max-vertical-offset="900">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/list_view.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="8" selection-start="352" selection-end="352" vertical-scroll-proportion="0.30337077" vertical-offset="0" max-vertical-offset="576">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
   </component>
