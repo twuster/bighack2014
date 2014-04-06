@@ -16,6 +16,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="google-play-services" level="project" />
+    <orderEntry type="module" module-name="google-play-services_lib" />
   </component>
 </module>
 

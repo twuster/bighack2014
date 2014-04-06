@@ -8,7 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class MyActivity extends Activity{
+public class MyActivity extends Activity implements View.OnClickListener{
 
     Context context;
     /**
@@ -21,26 +21,33 @@ public class MyActivity extends Activity{
         context = this;
 
         Button tonyButton = (Button)findViewById(R.id.tonybutton);
-        tonyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        tonyButton.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()){
+            case R.id.johnbutton:
+
+                break;
+            case R.id.vincentbutton:
+                Intent myIntent = new Intent(this,MapListView.class);
+                this.startActivity(myIntent);
+                break;
+            case R.id.nishantbutton:
+
+                break;
+            case R.id.tonybutton:
                 Log.d("tonybutton", "PRESSING BUTTON");
                 Intent i = new Intent(context, CongratulationActivity.class);
                 context.startActivity(i);
-            }
-        });
+                break;
+            default:
+                break;
 
-        Button vincentButton = (Button)findViewById(R.id.vincentbutton);
-        vincentButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("vincentbutton", "PRESSING BUTTON");
-                Intent i = new Intent(context, MapListView.class);
-                context.startActivity(i);
-            }
-        });
+
+        }
     }
-
 
     public void openListView(View view) {
         Intent myIntent = new Intent(this,MapListView.class);
