@@ -16,10 +16,13 @@ import java.util.List;
 
 public class MapListView extends MyActivity {
 
+    public Context context;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
         Intent intent = getIntent();
+        context = this;
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_view);
@@ -45,9 +48,9 @@ public class MapListView extends MyActivity {
             public void onItemClick(AdapterView<?> parent, final View view,
                                     int position, long id) {
                 final String item = (String) parent.getItemAtPosition(position);
-                list.remove(item);
-                adapter.notifyDataSetChanged();
-
+                Intent i = new Intent(context, DetailView.class);
+                i.putExtra("message", item);
+                context.startActivity(i);
             }
 
         });
