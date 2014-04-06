@@ -76,8 +76,8 @@ public class RunsDataSource {
     private Run cursorToRun(Cursor cursor) {
         Run run = new Run();
         run.setId(cursor.getLong(0));
-        run.setDate(new Date(cursor.getString(0)));
-        run.setBitmap(BitmapFactory.decodeByteArray(cursor.getBlob(0), 0, cursor.getBlob(0).length));
+        run.setDate(new Date(cursor.getString(2)));
+        run.setBitmap(BitmapFactory.decodeByteArray(cursor.getBlob(1), 0, cursor.getBlob(1).length));
         return run;
     }
 
