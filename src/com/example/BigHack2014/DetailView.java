@@ -15,9 +15,13 @@ public class DetailView extends Activity{
         Intent intent = getIntent();
         super.onCreate(savedInstanceState);
         String name = (String) intent.getExtras().get("message");
+//        String date = (String) intent.getExtras().get("date");
+//        String map = (String) intent.getExtras().get("map");
         setContentView(R.layout.detail_view);
         TextView textview = (TextView) findViewById(R.id.textView);
         textview.setText(name);
+//        date.setText(date);
+//        mapView.setText(map);
     }
 
 }

@@ -28,6 +28,7 @@ public class MapListView extends MyActivity {
         setContentView(R.layout.list_view);
 
         final ListView listview = (ListView) findViewById(R.id.list_view);
+//        replace below with call to database
         String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
                 "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
                 "Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
@@ -48,8 +49,12 @@ public class MapListView extends MyActivity {
             public void onItemClick(AdapterView<?> parent, final View view,
                                     int position, long id) {
                 final String item = (String) parent.getItemAtPosition(position);
+//                final String item2 = (String) parent.getItemAtPosition(position);
+//                final String item3 = (String) parent.getItemAtPosition(position);
                 Intent i = new Intent(context, DetailView.class);
                 i.putExtra("message", item);
+//                i.putExtra("date", item2);
+//                i.putExtra("map", item3);
                 context.startActivity(i);
             }
 
