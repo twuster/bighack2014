@@ -15,12 +15,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e01e9ee2-17b2-47da-bf4a-ccdb7f925138" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/BigHack2014/CongratulationActivity.java" afterPath="$PROJECT_DIR$/src/com/example/BigHack2014/CongratulationActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/BigHack2014/MapListView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/list_view.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/menu/list_view_example.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/BigHack2014/MyActivity.java" afterPath="$PROJECT_DIR$/src/com/example/BigHack2014/MyActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/BigHack2014/MySQLiteHelper.java" afterPath="$PROJECT_DIR$/src/com/example/BigHack2014/MySQLiteHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/BigHack2014/RunsDataSource.java" afterPath="$PROJECT_DIR$/src/com/example/BigHack2014/RunsDataSource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/main.xml" afterPath="$PROJECT_DIR$/res/layout/main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/BigHack2014/Run.java" afterPath="$PROJECT_DIR$/src/com/example/BigHack2014/Run.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
     </list>
     <ignored path="BigHack2014.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -84,22 +85,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MyActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MyActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/MyActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="22" selection-start="507" selection-end="507" vertical-scroll-proportion="0.4361874" vertical-offset="0" max-vertical-offset="792">
+            <state line="25" column="22" selection-start="663" selection-end="663" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="900">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="58" selection-start="1491" selection-end="1491" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="738">
+            <state line="24" column="19" selection-start="1375" selection-end="1375" vertical-scroll-proportion="0.4184168" vertical-offset="173" max-vertical-offset="792">
               <folding>
                 <element signature="e#1002#1020#0" expanded="true" />
                 <element signature="e#1135#1153#0" expanded="true" />
+                <element signature="e#1536#1554#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -119,7 +121,7 @@
       <file leaf-file-name="Run.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/Run.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="30" selection-start="696" selection-end="696" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="864">
+            <state line="36" column="55" selection-start="620" selection-end="620" vertical-scroll-proportion="0.0" vertical-offset="245" max-vertical-offset="864">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#206#207#0" expanded="true" />
@@ -209,14 +211,14 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/example/BigHack2014/Run.java" />
         <option value="$PROJECT_DIR$/res/layout/congratulation_layout.xml" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/com/example/BigHack2014/MySQLiteHelper.java" />
         <option value="$PROJECT_DIR$/src/com/example/BigHack2014/RunsDataSource.java" />
         <option value="$PROJECT_DIR$/src/com/example/BigHack2014/CongratulationActivity.java" />
         <option value="$PROJECT_DIR$/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/src/com/example/BigHack2014/MyActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/example/BigHack2014/Run.java" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
       </list>
     </option>
   </component>
@@ -577,27 +579,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/Run.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="30" selection-start="696" selection-end="696" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="864">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#206#207#0" expanded="true" />
-            <element signature="e#231#232#0" expanded="true" />
-            <element signature="e#265#266#0" expanded="true" />
-            <element signature="e#293#294#0" expanded="true" />
-            <element signature="e#326#327#0" expanded="true" />
-            <element signature="e#355#356#0" expanded="true" />
-            <element signature="e#399#400#0" expanded="true" />
-            <element signature="e#435#436#0" expanded="true" />
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#491#492#0" expanded="true" />
-            <element signature="e#529#530#0" expanded="true" />
-            <element signature="e#561#562#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/congratulation_layout.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="48" selection-start="705" selection-end="705" vertical-scroll-proportion="-10.384615" vertical-offset="0" max-vertical-offset="558">
@@ -606,16 +587,6 @@
       </provider>
       <provider editor-type-id="android-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="58" selection-start="1491" selection-end="1491" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="738">
-          <folding>
-            <element signature="e#1002#1020#0" expanded="true" />
-            <element signature="e#1135#1153#0" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/MySQLiteHelper.java">
@@ -659,8 +630,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/MyActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="22" selection-start="507" selection-end="507" vertical-scroll-proportion="0.4361874" vertical-offset="0" max-vertical-offset="792">
+        <state line="25" column="22" selection-start="663" selection-end="663" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="900">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/Run.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="55" selection-start="620" selection-end="620" vertical-scroll-proportion="0.0" vertical-offset="245" max-vertical-offset="864">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#206#207#0" expanded="true" />
+            <element signature="e#231#232#0" expanded="true" />
+            <element signature="e#265#266#0" expanded="true" />
+            <element signature="e#293#294#0" expanded="true" />
+            <element signature="e#326#327#0" expanded="true" />
+            <element signature="e#355#356#0" expanded="true" />
+            <element signature="e#399#400#0" expanded="true" />
+            <element signature="e#435#436#0" expanded="true" />
+            <element signature="e#464#465#0" expanded="true" />
+            <element signature="e#491#492#0" expanded="true" />
+            <element signature="e#529#530#0" expanded="true" />
+            <element signature="e#561#562#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="19" selection-start="1375" selection-end="1375" vertical-scroll-proportion="0.4184168" vertical-offset="173" max-vertical-offset="792">
+          <folding>
+            <element signature="e#1002#1020#0" expanded="true" />
+            <element signature="e#1135#1153#0" expanded="true" />
+            <element signature="e#1536#1554#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
