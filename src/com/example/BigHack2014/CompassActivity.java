@@ -42,6 +42,7 @@ public class CompassActivity extends Activity implements GooglePlayServicesClien
     private Location currentDest;
     private LinkedList<LatLng> pointsVisited = new LinkedList<LatLng>();
     private float currentDegree = (float) 0.0;
+    private int counter = 0;
 
     @Override
     public void onStart(){
@@ -103,6 +104,7 @@ public class CompassActivity extends Activity implements GooglePlayServicesClien
                                                        System.currentTimeMillis());
             float declination = geomagneticField.getDeclination();
             float trueHeading = heading + declination;
+//            return trueHeading;
             return (float)(trueHeading * -1.0) + bearing; //degrees to location
         } else {
             Log.d("Gravity or Geo", "null");
@@ -111,6 +113,7 @@ public class CompassActivity extends Activity implements GooglePlayServicesClien
     }
 
     private void updateView(float bearing){
+
         RotateAnimation ra = new RotateAnimation(
                 currentDegree,
                 bearing,
@@ -118,12 +121,17 @@ public class CompassActivity extends Activity implements GooglePlayServicesClien
                 Animation.RELATIVE_TO_SELF, 0.5f
         );
 
-        ra.setDuration(210);
+        ra.setDuration(500);
         ra.setFillAfter(true);
+
         ImageView image = (ImageView) findViewById(R.id.imageViewCompass);
         image.startAnimation(ra);
         currentDegree = bearing;
 
+    }
+
+    private void incrementCounter(){
+        counter = (counter + 1) % 100;
     }
 
     @Override
@@ -146,37 +154,6 @@ public class CompassActivity extends Activity implements GooglePlayServicesClien
     public void onLocationChanged(Location location){
         Log.d("Location", "location changed");
         this.currentLocation = location;
-        float distance = location.distanceTo(currentDest);
-        if (distance < 5){
-            if (!onPath){
-                //TODO: give "Start run" prompt in view
-                onPath = true;
-            }
-
-            LatLng nextDest = new LatLng(0.0, 0.0);
-            if (path.hasNext()){
-                nextDest = path.next();
-            } else {
-                //TODO: go to congratulatory page
-                //TODO: make polyline + finish activity
-                this.finish();
-            }
-            Location nextLocation = new Location("");
-            nextLocation.setLatitude(nextDest.latitude);
-            nextLocation.setLongitude(nextDest.longitude);
-            currentDest = nextLocation;
-        }
-        float bearing = bearingToPoint((float)currentDest.getLatitude(), (float)currentDest.getLongitude());
-        if (onPath){
-            pointsVisited.add(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()));
-        }
-        //TODO: Update view with new bearing
-        Log.d("Bearing", Float.toString(bearing));
-        if (bearing < 0) {
-            bearing = bearing + 360;
-        }
-        Log.d("New bearing", Float.toString(bearing));
-        updateView(bearing);
 
     }
 
@@ -194,6 +171,8 @@ public class CompassActivity extends Activity implements GooglePlayServicesClien
 
     @Override
     public void onSensorChanged(SensorEvent event) {
+
+
         switch (event.sensor.getType()){
             case Sensor.TYPE_ACCELEROMETER:
                 gravity = event.values.clone();
@@ -201,6 +180,44 @@ public class CompassActivity extends Activity implements GooglePlayServicesClien
             case Sensor.TYPE_MAGNETIC_FIELD:
                 geomagnetic = event.values.clone();
                 break;
+        }
+
+        if (locationClient.isConnected()) {
+            float distance = currentLocation.distanceTo(currentDest);
+            if (distance < 5){
+                if (!onPath){
+                    //TODO: give "Start run" prompt in view
+                    onPath = true;
+                }
+
+                LatLng nextDest = new LatLng(0.0, 0.0);
+                if (path.hasNext()){
+                    nextDest = path.next();
+                } else {
+                    //TODO: go to congratulatory page
+                    //TODO: make polyline + finish activity
+                    this.finish();
+                }
+                Location nextLocation = new Location("");
+                nextLocation.setLatitude(nextDest.latitude);
+                nextLocation.setLongitude(nextDest.longitude);
+                currentDest = nextLocation;
+            }
+            float bearing = bearingToPoint((float)currentDest.getLatitude(), (float)currentDest.getLongitude());
+
+            //TODO: Update view with new bearing
+            Log.d("Bearing", Float.toString(bearing));
+            if (bearing < 0) {
+                bearing += 360;
+            }
+            Log.d("New bearing", Float.toString(bearing));
+            if (counter == 0) {
+                updateView((float)(Math.ceil(bearing/5)*5));
+                if (onPath){
+                    pointsVisited.add(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()));
+                }
+            }
+            incrementCounter();
         }
     }
 

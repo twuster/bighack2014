@@ -1,8 +1,10 @@
 package com.example.BigHack2014;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 public class MyActivity extends Activity implements View.OnClickListener {
     /**
@@ -12,6 +14,8 @@ public class MyActivity extends Activity implements View.OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        Button b = (Button) findViewById(R.id.nishantbutton);
+        b.setOnClickListener(this);
     }
 
     @Override
@@ -24,7 +28,9 @@ public class MyActivity extends Activity implements View.OnClickListener {
 
                 break;
             case R.id.nishantbutton:
-
+                Intent intent = new Intent(this, CompassActivity.class);
+                this.finish();
+                startActivity(intent);
                 break;
             case R.id.tonybutton:
 
