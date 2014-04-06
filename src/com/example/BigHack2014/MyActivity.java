@@ -41,9 +41,9 @@ public class MyActivity extends Activity implements View.OnClickListener{
                 this.startActivity(myIntent);
                 break;
             case R.id.nishantbutton:
-                Intent intent = new Intent(this, CompassActivity.class);
+                Intent nIntent = new Intent(this, CompassActivity.class);
                 this.finish();
-                startActivity(intent);
+                startActivity(nIntent);
                 break;
             case R.id.tonybutton:
                 Log.d("tonybutton", "PRESSING BUTTON");
