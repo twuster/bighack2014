@@ -29,30 +29,18 @@ public class MyActivity extends Activity{
                 context.startActivity(i);
             }
         });
+
+        Button vincentButton = (Button)findViewById(R.id.vincentbutton);
+        vincentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("vincentbutton", "PRESSING BUTTON");
+                Intent i = new Intent(context, MapListView.class);
+                context.startActivity(i);
+            }
+        });
     }
 
-//    @Override
-//    public void onClick(View v) {
-//        switch(v.getId()){
-//            case R.id.johnbutton:
-//
-//                break;
-//            case R.id.vincentbutton:
-//                Intent myIntent = new Intent(this,MapListView.class);
-//                this.startActivity(myIntent);
-//                break;
-//            case R.id.nishantbutton:
-//
-//                break;
-//            case R.id.tonybutton:
-//
-//                break;
-//            default:
-//                break;
-//
-//
-//        }
-//    }
 
     public void openListView(View view) {
         Intent myIntent = new Intent(this,MapListView.class);
