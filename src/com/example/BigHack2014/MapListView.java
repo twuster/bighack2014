@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -26,6 +27,15 @@ public class MapListView extends MyActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_view);
+
+        Button johnbutton = (Button)findViewById(R.id.johnbutton);
+        johnbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context, DrawMapActivity.class);
+                context.startActivity(i);
+            }
+        });
 
         final ListView listview = (ListView) findViewById(R.id.list_view);
 //        replace below with call to database
