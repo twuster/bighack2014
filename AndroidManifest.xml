@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".CongratulationActivity"
-                  android:label="congratulation_activity">
+                  android:label="congratulation_activity"/>
         <activity
             android:label="@string/app_name"
             android:name="MapListView">

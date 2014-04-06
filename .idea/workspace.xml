@@ -15,13 +15,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e01e9ee2-17b2-47da-bf4a-ccdb7f925138" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/BigHack2014/MapListView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/list_view.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/menu/list_view_example.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/BigHack2014/MyActivity.java" afterPath="$PROJECT_DIR$/src/com/example/BigHack2014/MyActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/BigHack2014/Run.java" afterPath="$PROJECT_DIR$/src/com/example/BigHack2014/Run.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
     </list>
     <ignored path="BigHack2014.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -97,11 +91,11 @@
       <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="19" selection-start="1375" selection-end="1375" vertical-scroll-proportion="0.4184168" vertical-offset="173" max-vertical-offset="792">
+            <state line="26" column="58" selection-start="1491" selection-end="1491" vertical-scroll-proportion="0.73828757" vertical-offset="11" max-vertical-offset="792">
               <folding>
                 <element signature="e#1002#1020#0" expanded="true" />
                 <element signature="e#1135#1153#0" expanded="true" />
-                <element signature="e#1536#1554#0" expanded="true" />
+                <element signature="e#1537#1555#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -658,11 +652,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="19" selection-start="1375" selection-end="1375" vertical-scroll-proportion="0.4184168" vertical-offset="173" max-vertical-offset="792">
+        <state line="26" column="58" selection-start="1491" selection-end="1491" vertical-scroll-proportion="0.73828757" vertical-offset="11" max-vertical-offset="792">
           <folding>
             <element signature="e#1002#1020#0" expanded="true" />
             <element signature="e#1135#1153#0" expanded="true" />
-            <element signature="e#1536#1554#0" expanded="true" />
+            <element signature="e#1537#1555#0" expanded="true" />
           </folding>
         </state>
       </provider>
