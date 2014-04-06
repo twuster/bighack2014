@@ -22,6 +22,7 @@ public class DetailView extends Activity{
     public void onCreate(Bundle savedInstanceState) {
 
         context = this;
+        setContentView(R.layout.detail_view);
 
         Button printButton = (Button)findViewById(R.id.printButton);
         printButton.setOnClickListener(new View.OnClickListener() {
@@ -56,7 +57,6 @@ public class DetailView extends Activity{
         String name = (String) intent.getExtras().get("message");
 //        String date = (String) intent.getExtras().get("date");
 //        String map = (String) intent.getExtras().get("map");
-        setContentView(R.layout.detail_view);
         TextView textview = (TextView) findViewById(R.id.textView);
         textview.setText(name);
 //        date.setText(date);
