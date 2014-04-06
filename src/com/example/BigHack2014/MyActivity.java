@@ -3,6 +3,7 @@ package com.example.BigHack2014;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 public class MyActivity extends Activity implements View.OnClickListener {
@@ -28,6 +29,7 @@ public class MyActivity extends Activity implements View.OnClickListener {
 
                 break;
             case R.id.tonybutton:
+                Log.d("tonybutton", "PRESSING BUTTON");
                 Intent i = new Intent(this, CongratulationActivity.class);
                 this.startActivity(i);
                 break;
