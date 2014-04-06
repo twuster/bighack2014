@@ -17,8 +17,8 @@
 
     <ImageView
         android:id="@+id/imageViewCompass"
-        android:layout_width="350"
-        android:layout_height="350"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
         android:layout_below="@+id/tvHeading"
         android:src="@drawable/arrow_large"
         android:layout_gravity="center_horizontal"/>
@@ -41,8 +41,8 @@
     <Chronometer
         android:visibility="invisible"
         android:id="@+id/timer"
-        android:layout_height="0"
-        android:layout_width="0"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         />
 
 </LinearLayout>
