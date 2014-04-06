@@ -1,6 +1,7 @@
 package com.example.BigHack2014;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -21,7 +22,8 @@ public class MyActivity extends Activity implements View.OnClickListener {
 
                 break;
             case R.id.vincentbutton:
-
+                Intent myIntent = new Intent(this,MapListView.class);
+                this.startActivity(myIntent);
                 break;
             case R.id.nishantbutton:
 
@@ -34,5 +36,10 @@ public class MyActivity extends Activity implements View.OnClickListener {
 
 
         }
+    }
+
+    public void openListView(View view) {
+        Intent myIntent = new Intent(this,MapListView.class);
+        this.startActivity(myIntent);
     }
 }

@@ -20,7 +20,7 @@ public class Run {
         this.comment = comment;
     }
 
-    // Will be used by the ArrayAdapter in the ListView
+    // Will be used by the ArrayAdapter in the MapListView
     @Override
     public String toString() {
         return comment;
