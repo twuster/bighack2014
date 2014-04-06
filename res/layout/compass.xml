@@ -13,6 +13,7 @@
         android:layout_marginBottom="20dp"
         android:layout_marginTop="20dp"
         android:text="Heading: 0.0"
+        android:textSize = "20dp"
         android:layout_gravity="center_horizontal"/>
 
     <ImageView
@@ -26,6 +27,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:text="Go to start point"
+        android:textSize="30dp"
+        android:gravity="center"
         android:id="@+id/alertText"
 
         />
@@ -36,7 +40,8 @@
         android:background="@color/button_red"
         android:text="Cancel run"
         android:textColor="@color/white"
-        android:onClick="onClickComplete"/>
+        android:onClick="onClickComplete"
+        android:layout_marginTop="10dp"/>
 
     <Chronometer
         android:visibility="invisible"
