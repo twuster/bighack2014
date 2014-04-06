@@ -55,14 +55,18 @@ public class CongratulationActivity extends Activity implements GooglePlayServic
         map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
         map.setMyLocationEnabled(true);
 
+        LatLngBounds.Builder builder = new LatLngBounds.Builder();
         PolylineOptions options = new PolylineOptions();
         for (int i =0; i<points.size(); i++){
             options.add((LatLng)points.get(i));
+            builder.include((LatLng)points.get(i));
         }
         Polyline line = map.addPolyline(options
                 .width(5)
                 .color(Color.BLUE));
-        map.moveCamera(CameraUpdateFactory.newLatLngBounds(new LatLngBounds.Builder().build(), 16));
+        if(points.size()>0){
+            map.moveCamera(CameraUpdateFactory.newLatLngBounds(builder.build(), 16));
+        }
 
         mLocationClient = new LocationClient(this, this, this);
         nameText = (EditText)findViewById(R.id.nameText);
