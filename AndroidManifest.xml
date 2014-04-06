@@ -23,6 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name="DrawMapActivity" />
         <activity android:name=".CongratulationActivity"
                   android:label="congratulation_activity"/>
         <activity
