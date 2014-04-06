@@ -24,7 +24,9 @@
             </intent-filter>
         </activity>
         <activity android:name="CompassActivity"
-            android:label="@string/compass_name">
+            android:label="@string/compass_name"
+            android:screenOrientation="portrait">
+
         </activity>
         <meta-data
                 android:name="com.google.android.maps.v2.API_KEY"

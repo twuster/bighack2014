@@ -10,6 +10,9 @@ import android.hardware.SensorManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.animation.Animation;
+import android.view.animation.RotateAnimation;
+import android.widget.ImageView;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient;
@@ -38,11 +41,14 @@ public class CompassActivity extends Activity implements GooglePlayServicesClien
     private ListIterator<LatLng> path;
     private Location currentDest;
     private LinkedList<LatLng> pointsVisited = new LinkedList<LatLng>();
+    private float currentDegree = (float) 0.0;
 
     @Override
     public void onStart(){
         super.onStart();
         locationClient.connect();
+        sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_GAME);
+        sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD), SensorManager.SENSOR_DELAY_GAME);
     }
 
     /**
@@ -54,12 +60,23 @@ public class CompassActivity extends Activity implements GooglePlayServicesClien
         super.onCreate(savedInstanceState);
         setContentView(R.layout.compass);
 
+        points = new LinkedList<LatLng>();
+        points.add(new LatLng(0.0, 0.0));
+        path = points.listIterator();
+
+        Location dest = new Location("");
+        LatLng d = path.next();
+        dest.setLatitude(d.latitude);
+        dest.setLongitude(d.longitude);
+        currentDest = dest;
+
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         locationClient = new LocationClient(this, this, this);
         locationRequest = LocationRequest.create();
-        locationRequest.setInterval(5000);
-        locationRequest.setFastestInterval(1000);
+        locationRequest.setInterval(250);
+        locationRequest.setFastestInterval(250);
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+
     }
 
     private float bearingToPoint(float lat, float lon) {
@@ -68,6 +85,7 @@ public class CompassActivity extends Activity implements GooglePlayServicesClien
         nextPoint.setLongitude(lon);
         float bearing = currentLocation.bearingTo(nextPoint);
         if (gravity != null && geomagnetic != null) {
+            Log.d("Bearing", "Finding orientation!");
             float R[] = new float[9];
             float I[] = new float[9];
             boolean success = SensorManager.getRotationMatrix(R, I, gravity, geomagnetic);
@@ -76,6 +94,7 @@ public class CompassActivity extends Activity implements GooglePlayServicesClien
                 SensorManager.getOrientation(R, orientation);
             }
             float azimuth = orientation[0];
+            Log.d("Azimuth", Float.toString(azimuth));
             float heading = (float) (azimuth * (180.0 / Math.PI));
             GeomagneticField geomagneticField = new GeomagneticField(
                                                        (float) currentLocation.getLatitude(),
@@ -85,8 +104,26 @@ public class CompassActivity extends Activity implements GooglePlayServicesClien
             float declination = geomagneticField.getDeclination();
             float trueHeading = heading + declination;
             return (float)(trueHeading * -1.0) + bearing; //degrees to location
+        } else {
+            Log.d("Gravity or Geo", "null");
         }
         return (float) 0.0;
+    }
+
+    private void updateView(float bearing){
+        RotateAnimation ra = new RotateAnimation(
+                currentDegree,
+                bearing,
+                Animation.RELATIVE_TO_SELF, 0.5f,
+                Animation.RELATIVE_TO_SELF, 0.5f
+        );
+
+        ra.setDuration(210);
+        ra.setFillAfter(true);
+        ImageView image = (ImageView) findViewById(R.id.imageViewCompass);
+        image.startAnimation(ra);
+        currentDegree = bearing;
+
     }
 
     @Override
@@ -107,6 +144,7 @@ public class CompassActivity extends Activity implements GooglePlayServicesClien
 
     @Override
     public void onLocationChanged(Location location){
+        Log.d("Location", "location changed");
         this.currentLocation = location;
         float distance = location.distanceTo(currentDest);
         if (distance < 5){
@@ -121,6 +159,7 @@ public class CompassActivity extends Activity implements GooglePlayServicesClien
             } else {
                 //TODO: go to congratulatory page
                 //TODO: make polyline + finish activity
+                this.finish();
             }
             Location nextLocation = new Location("");
             nextLocation.setLatitude(nextDest.latitude);
@@ -132,6 +171,12 @@ public class CompassActivity extends Activity implements GooglePlayServicesClien
             pointsVisited.add(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()));
         }
         //TODO: Update view with new bearing
+        Log.d("Bearing", Float.toString(bearing));
+        if (bearing < 0) {
+            bearing = bearing + 360;
+        }
+        Log.d("New bearing", Float.toString(bearing));
+        updateView(bearing);
 
     }
 
@@ -151,10 +196,10 @@ public class CompassActivity extends Activity implements GooglePlayServicesClien
     public void onSensorChanged(SensorEvent event) {
         switch (event.sensor.getType()){
             case Sensor.TYPE_ACCELEROMETER:
-                gravity = event.values;
+                gravity = event.values.clone();
                 break;
             case Sensor.TYPE_MAGNETIC_FIELD:
-                geomagnetic = event.values;
+                geomagnetic = event.values.clone();
                 break;
         }
     }
