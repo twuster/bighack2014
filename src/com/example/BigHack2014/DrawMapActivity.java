@@ -100,7 +100,7 @@ public class DrawMapActivity extends Activity
                 break;
             case (STAT_PATH):
                 Intent i = new Intent(this, CompassActivity.class);
-                i.putExtra("points", points);
+                i.putParcelableArrayListExtra("points", points);
                 this.finish();
                 startActivity(i);
                 break;
