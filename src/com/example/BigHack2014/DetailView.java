@@ -3,9 +3,16 @@ package com.example.BigHack2014;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Environment;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 //import com.kindredprints.android.sdk.KindredOrderFlow;
 //import com.kindredprints.android.sdk.KLOCPhoto; // use this
@@ -50,17 +57,27 @@ public class DetailView extends Activity{
 
 
         Intent intent = getIntent();
-//        super.onCreate(savedInstanceState);
         Bundle extras = intent.getExtras();
         String name = (String) extras.get("message");
         String bitmap = (String) extras.get("bitmap");
-        String date = (String) extras.get("date");
-//        String date = (String) intent.getExtras().get("date");
-//        String map = (String) intent.getExtras().get("map");
+        Date date = (Date) extras.get("date");
         TextView nameText = (TextView) findViewById(R.id.nameText);
         nameText.setText(name);
-//        date.setText(date);
-//        mapView.setText(map);
+        Bitmap b = loadBitmap(bitmap);
+        ImageView mapView = (ImageView)findViewById(R.id.mapView);
+        mapView.setImageBitmap(b);
+        TextView dateText = (TextView) findViewById(R.id.dateText);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String parsedDate = dateFormat.format(date);
+        dateText.setText(parsedDate);
+    }
+
+    public Bitmap loadBitmap(String file){
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+        String path = Environment.getExternalStorageDirectory().toString() + "/" + file;
+        Bitmap bitmap = BitmapFactory.decodeFile(path, options);
+        return bitmap;
     }
 
 }
