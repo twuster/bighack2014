@@ -9,5 +9,25 @@
             android:layout_height="wrap_content"
             android:text="Hello World, MyActivity"
             />
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="John"
+            android:id="@+id/johnbutton" android:layout_gravity="center_horizontal"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vincent"
+            android:id="@+id/vincentbutton" android:layout_gravity="center_horizontal"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nishant"
+            android:id="@+id/nishantbutton" android:layout_gravity="center_horizontal"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tony"
+            android:id="@+id/tonybutton" android:layout_gravity="center_horizontal"/>
 </LinearLayout>
 
