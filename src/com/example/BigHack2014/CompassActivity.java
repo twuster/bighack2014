@@ -188,7 +188,13 @@ public class CompassActivity extends Activity implements SensorEventListener, Go
 
     public void onClickComplete(View view) {
         Intent i = new Intent(this, CongratulationActivity.class);
-        i.putParcelableArrayListExtra("points", pointsVisited);
+        if (pointsVisited.size() > 0) {
+            Log.d("Congratulate", Integer.toString(pointsVisited.size()));
+            i.putParcelableArrayListExtra("points", pointsVisited);
+        } else {
+            Log.d("Passing drawn points", Integer.toString(points.size()));
+            i.putParcelableArrayListExtra("points", points);
+        }
         i.putExtra("time", SystemClock.elapsedRealtime() - timer.getBase());
         this.finish();
         startActivity(i);
@@ -204,7 +210,7 @@ public class CompassActivity extends Activity implements SensorEventListener, Go
     @Override
     public void onLocationChanged(Location location){
         currentLocation = location;
-        if (counter == 0) {
+        if (counter == 0 && onPath) {
             pointsVisited.add(new LatLng(location.getLatitude(), location.getLongitude()));
         }
         incrementCounter();
