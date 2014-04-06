@@ -7,10 +7,14 @@
     >
     <!--tools:context="com.example.androidtut.app.ListViewExampleActivity">-->
     <Button
-        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Start New Adventure!"
-        android:id="@+id/johnbutton" android:layout_gravity="center_horizontal"/>
+        android:id="@+id/johnbutton"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/blue_button"
+        android:textColor="@color/white" android:layout_alignParentTop="true" android:layout_centerHorizontal="true"/>
 
     <ListView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/list_view"
