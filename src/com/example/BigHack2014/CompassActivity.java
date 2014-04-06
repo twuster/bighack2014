@@ -1,6 +1,7 @@
 package com.example.BigHack2014;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.hardware.GeomagneticField;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -8,9 +9,13 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.location.Location;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.util.Log;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
+import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,6 +26,7 @@ import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.maps.model.LatLng;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
@@ -40,12 +46,16 @@ public class CompassActivity extends Activity implements SensorEventListener, Go
     private LocationRequest locationRequest;
     private static LocationClient locationClient;
     private boolean onPath = false;
-    private LinkedList<LatLng> points;
+    private ArrayList<LatLng> points;
     private ListIterator<LatLng> path;
     private Location currentDest;
-    private LinkedList<LatLng> pointsVisited = new LinkedList<LatLng>();
+    private ArrayList<LatLng> pointsVisited = new ArrayList<LatLng>();
+    private int counter = 0;
 
     TextView tvHeading;
+    TextView alert;
+    Button button;
+    Chronometer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,19 +71,29 @@ public class CompassActivity extends Activity implements SensorEventListener, Go
         // initialize your android device sensor capabilities
         mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 
+        Bundle extras = getIntent().getExtras();
+        if (extras!=null){
+            points = extras.getParcelableArrayList("points");
+        }
+
         locationClient = new LocationClient(this, this, this);
         locationRequest = LocationRequest.create();
         locationRequest.setInterval(250);
         locationRequest.setFastestInterval(250);
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
 
-        points = new LinkedList<LatLng>();
-        points.add(new LatLng(0f, 0f));
         path = points.listIterator();
         LatLng ll = path.next();
         currentDest = new Location("");
-        currentDest.setLatitude(0f);
-        currentDest.setLongitude(0f);
+        currentDest.setLatitude(ll.latitude);
+        currentDest.setLongitude(ll.longitude);
+
+        alert = (TextView) findViewById(R.id.alertText);
+        alert.setText("Go to start point");
+
+        button = (Button) findViewById(R.id.cancel_complete_button);
+
+        timer = (Chronometer) findViewById(R.id.timer);
 
 
 
@@ -103,6 +123,10 @@ public class CompassActivity extends Activity implements SensorEventListener, Go
         mSensorManager.unregisterListener(this);
     }
 
+    private void incrementCounter(){
+        counter = (counter + 1) % 10;
+    }
+
     @Override
     public void onSensorChanged(SensorEvent event) {
 
@@ -115,17 +139,21 @@ public class CompassActivity extends Activity implements SensorEventListener, Go
             float distance = currentLocation.distanceTo(currentDest);
             if (distance < 5){
                 if (!onPath){
-                    //TODO: give "Start run" prompt in view
+                    alert.setText("Begin run!");
                     onPath = true;
+                    timer.setBase(SystemClock.elapsedRealtime());
                 }
 
                 LatLng nextDest = new LatLng(0.0, 0.0);
                 if (path.hasNext()){
                     nextDest = path.next();
                 } else {
-                    //TODO: go to congratulatory page
-                    //TODO: make polyline + finish activity
-                    this.finish();
+                    alert.setText("Run complete!");
+                    button.setText("Complete!");
+                    button.setBackgroundColor(R.color.button_green);
+                    mSensorManager.unregisterListener(this);
+                    return;
+
                 }
                 Location nextLocation = new Location("");
                 nextLocation.setLatitude(nextDest.latitude);
@@ -160,9 +188,18 @@ public class CompassActivity extends Activity implements SensorEventListener, Go
 
         // Start the animation
         image.startAnimation(ra);
-        currentDegree = -north+bearing+declination
-        ;
+        currentDegree = -north+bearing+declination;
 
+    }
+
+    public void onClickComplete(View view) {
+        Intent i = new Intent(this, CompassActivity.class);
+        i.putParcelableArrayListExtra("points", pointsVisited);
+        i.putExtra("time", SystemClock.elapsedRealtime() - timer.getBase());
+        this.finish();
+        startActivity(i);
+        this.finish();
+        return;
     }
 
     @Override
@@ -173,6 +210,10 @@ public class CompassActivity extends Activity implements SensorEventListener, Go
     @Override
     public void onLocationChanged(Location location){
         currentLocation = location;
+        if (counter == 0) {
+            pointsVisited.add(new LatLng(location.getLatitude(), location.getLongitude()));
+        }
+        incrementCounter();
     }
 
     @Override
