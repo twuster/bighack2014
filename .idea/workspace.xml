@@ -15,11 +15,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e01e9ee2-17b2-47da-bf4a-ccdb7f925138" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/blue_button.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/blue_button_default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/blue_button_pressed.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/values/colors.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_mapdraw.xml" afterPath="$PROJECT_DIR$/res/layout/activity_mapdraw.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/congratulation_layout.xml" afterPath="$PROJECT_DIR$/res/layout/congratulation_layout.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/detail_view.xml" afterPath="$PROJECT_DIR$/res/layout/detail_view.xml" />
@@ -106,10 +101,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_mapdraw.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="activity_mapdraw.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/res/layout/activity_mapdraw.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="22" selection-start="806" selection-end="806" vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="468">
+            <state line="15" column="40" selection-start="729" selection-end="729" vertical-scroll-proportion="0.49360147" vertical-offset="0" max-vertical-offset="547">
               <folding />
             </state>
           </provider>
@@ -139,7 +134,7 @@
       <file leaf-file-name="detail_view.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/detail_view.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="28" selection-start="698" selection-end="698" vertical-scroll-proportion="-11.076923" vertical-offset="54" max-vertical-offset="900">
+            <state line="21" column="35" selection-start="788" selection-end="788" vertical-scroll-proportion="-12.461538" vertical-offset="54" max-vertical-offset="900">
               <folding />
             </state>
           </provider>
@@ -148,10 +143,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list_view.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="list_view.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/list_view.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="8" selection-start="352" selection-end="352" vertical-scroll-proportion="0.30337077" vertical-offset="0" max-vertical-offset="576">
+            <state line="10" column="31" selection-start="415" selection-end="415" vertical-scroll-proportion="-6.923077" vertical-offset="0" max-vertical-offset="576">
               <folding />
             </state>
           </provider>
@@ -172,7 +167,7 @@
       <file leaf-file-name="congratulation_layout.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/congratulation_layout.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="0" selection-start="1718" selection-end="1718" vertical-scroll-proportion="-16.615385" vertical-offset="324" max-vertical-offset="900">
+            <state line="34" column="39" selection-start="1385" selection-end="1385" vertical-scroll-proportion="-11.076923" vertical-offset="324" max-vertical-offset="900">
               <folding />
             </state>
           </provider>
@@ -224,10 +219,10 @@
         <option value="$PROJECT_DIR$/src/com/example/BigHack2014/MapListView.java" />
         <option value="$PROJECT_DIR$/src/com/example/BigHack2014/DetailView.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/res/layout/list_view.xml" />
+        <option value="$PROJECT_DIR$/res/layout/detail_view.xml" />
         <option value="$PROJECT_DIR$/res/layout/congratulation_layout.xml" />
         <option value="$PROJECT_DIR$/res/layout/activity_mapdraw.xml" />
-        <option value="$PROJECT_DIR$/res/layout/detail_view.xml" />
-        <option value="$PROJECT_DIR$/res/layout/list_view.xml" />
       </list>
     </option>
   </component>
@@ -951,19 +946,9 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/congratulation_layout.xml">
+    <entry file="file://$PROJECT_DIR$/res/layout/list_view.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="1718" selection-end="1718" vertical-scroll-proportion="-16.615385" vertical-offset="324" max-vertical-offset="900">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_mapdraw.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="22" selection-start="806" selection-end="806" vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="468">
+        <state line="10" column="31" selection-start="415" selection-end="415" vertical-scroll-proportion="-6.923077" vertical-offset="0" max-vertical-offset="576">
           <folding />
         </state>
       </provider>
@@ -973,7 +958,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/detail_view.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="28" selection-start="698" selection-end="698" vertical-scroll-proportion="-11.076923" vertical-offset="54" max-vertical-offset="900">
+        <state line="21" column="35" selection-start="788" selection-end="788" vertical-scroll-proportion="-12.461538" vertical-offset="54" max-vertical-offset="900">
           <folding />
         </state>
       </provider>
@@ -981,9 +966,19 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/list_view.xml">
+    <entry file="file://$PROJECT_DIR$/res/layout/congratulation_layout.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="8" selection-start="352" selection-end="352" vertical-scroll-proportion="0.30337077" vertical-offset="0" max-vertical-offset="576">
+        <state line="34" column="39" selection-start="1385" selection-end="1385" vertical-scroll-proportion="-11.076923" vertical-offset="324" max-vertical-offset="900">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_mapdraw.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="40" selection-start="729" selection-end="729" vertical-scroll-proportion="0.49360147" vertical-offset="0" max-vertical-offset="547">
           <folding />
         </state>
       </provider>

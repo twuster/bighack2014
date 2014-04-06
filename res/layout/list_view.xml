@@ -8,7 +8,7 @@
     <!--tools:context="com.example.androidtut.app.ListViewExampleActivity">-->
     <Button
         android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Start New Adventure!"
         android:id="@+id/johnbutton"
