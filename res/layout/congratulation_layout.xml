@@ -9,6 +9,12 @@
             android:layout_height="wrap_content"
             android:text="Congratulations you have finished your run"
             />
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name Your Run"
+            android:id="@+id/nameText"
+            android:layout_gravity="center_horizontal"/>
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
               android:id="@+id/map"
               android:layout_width="350dp"

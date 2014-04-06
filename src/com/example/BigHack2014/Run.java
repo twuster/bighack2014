@@ -1,13 +1,12 @@
 package com.example.BigHack2014;
 
-import android.graphics.Bitmap;
-
 import java.util.Date;
 
 public class Run {
     private long id;
-    private Bitmap bitmap;
+    private String bitmap;
     private Date date;
+    private String name;
 
     public long getId() {
         return id;
@@ -17,11 +16,11 @@ public class Run {
         this.id = id;
     }
 
-    public Bitmap getBitmap() {
+    public String getBitmap() {
         return bitmap;
     }
 
-    public void setBitmap(Bitmap bitmap) {
+    public void setBitmap(String bitmap) {
         this.bitmap = bitmap;
     }
 
@@ -31,6 +30,14 @@ public class Run {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public String getName(){
+        return name;
     }
 
 

@@ -7,11 +7,13 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.os.Environment;
+import android.util.Log;
 
 import java.nio.ByteBuffer;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class RunsDataSource {
@@ -20,7 +22,7 @@ public class RunsDataSource {
     private SQLiteDatabase database;
     private MySQLiteHelper dbHelper;
     private String[] allColumns = { MySQLiteHelper.COLUMN_ID,
-            MySQLiteHelper.COLUMN_BITMAP, MySQLiteHelper.COLUMN_DATE };
+            MySQLiteHelper.COLUMN_BITMAP, MySQLiteHelper.COLUMN_DATE, MySQLiteHelper.COLUMN_NAME };
 
     public RunsDataSource(Context context) {
         dbHelper = new MySQLiteHelper(context);
@@ -36,13 +38,21 @@ public class RunsDataSource {
 
     public Run createRun(Run run) {
         ContentValues values = new ContentValues();
-        values.put(MySQLiteHelper.COLUMN_BITMAP, convertBitmap(run.getBitmap()));
-        values.put(MySQLiteHelper.COLUMN_DATE, run.getDate().toString());
+        String path = Environment.getExternalStorageDirectory().toString();
+        values.put(MySQLiteHelper.COLUMN_BITMAP, run.getBitmap());
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        values.put(MySQLiteHelper.COLUMN_DATE, dateFormat.format(run.getDate()));
+        values.put(MySQLiteHelper.COLUMN_NAME, run.getName());
         long insertId = database.insert(MySQLiteHelper.TABLE_MAPS, null,
                 values);
-        Cursor cursor = database.query(MySQLiteHelper.TABLE_MAPS,
-                allColumns, MySQLiteHelper.COLUMN_ID + " = " + insertId, null,
+        Log.e("ID", ""+insertId);
+        Cursor cursor = null;
+        cursor = database.query(MySQLiteHelper.TABLE_MAPS,
+                allColumns, null, null,
                 null, null, null);
+
+        Log.e("CUROSE", cursor.toString());
         cursor.moveToFirst();
         Run newRun = cursorToRun(cursor);
         cursor.close();
@@ -76,8 +86,14 @@ public class RunsDataSource {
     private Run cursorToRun(Cursor cursor) {
         Run run = new Run();
         run.setId(cursor.getLong(0));
-        run.setDate(new Date(cursor.getString(2)));
-        run.setBitmap(BitmapFactory.decodeByteArray(cursor.getBlob(1), 0, cursor.getBlob(1).length));
+        run.setBitmap(cursor.getString(1));
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        try{
+            run.setDate(dateFormat.parse(cursor.getString(2)));
+        }catch(ParseException e){
+            Log.e("e", "parse exception");
+        }
+        run.setName(cursor.getString(3));
         return run;
     }
 
@@ -90,4 +106,5 @@ public class RunsDataSource {
         byte[] array = buffer.array(); //Get the underlying array containing the data.
         return array;
     }
+
 }
