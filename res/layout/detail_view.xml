@@ -13,4 +13,29 @@
         android:id="@+id/textView"
         android:layout_gravity="center_horizontal"
         android:layout_weight="0.08" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Print!"
+        android:id="@+id/printButton"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.08" />
+
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:id="@+id/mapView"
+        android:layout_gravity="center"
+        android:layout_weight="0.08" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/date"
+        android:layout_weight="0.08"
+        android:layout_gravity="center_horizontal" />
 </LinearLayout>

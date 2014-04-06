@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -27,7 +28,17 @@ public class MapListView extends MyActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_view);
 
+        Button johnbutton = (Button)findViewById(R.id.johnbutton);
+        johnbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context, DrawMapActivity.class);
+                context.startActivity(i);
+            }
+        });
+
         final ListView listview = (ListView) findViewById(R.id.list_view);
+//        replace below with call to database
         String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
                 "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
                 "Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
@@ -48,8 +59,12 @@ public class MapListView extends MyActivity {
             public void onItemClick(AdapterView<?> parent, final View view,
                                     int position, long id) {
                 final String item = (String) parent.getItemAtPosition(position);
+//                final String item2 = (String) parent.getItemAtPosition(position);
+//                final String item3 = (String) parent.getItemAtPosition(position);
                 Intent i = new Intent(context, DetailView.class);
                 i.putExtra("message", item);
+//                i.putExtra("date", item2);
+//                i.putExtra("map", item3);
                 context.startActivity(i);
             }
 

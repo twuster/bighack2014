@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.content.Intent;
 import android.widget.Button;
 
 public class MyActivity extends Activity implements View.OnClickListener{
@@ -18,17 +19,23 @@ public class MyActivity extends Activity implements View.OnClickListener{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        findViewById(R.id.johnbutton).setOnClickListener(this);
         context = this;
-
         Button tonyButton = (Button)findViewById(R.id.tonybutton);
         tonyButton.setOnClickListener(this);
+        Button vincentButton = (Button)findViewById(R.id.vincentbutton);
+        vincentButton.setOnClickListener(this);
+        Button nishantButton = (Button)findViewById(R.id.nishantbutton);
+        nishantButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.johnbutton:
-
+                Intent intent = new Intent(this, DrawMapActivity.class);
+                this.finish();
+                startActivity(intent);
                 break;
             case R.id.vincentbutton:
                 Intent myIntent = new Intent(this,MapListView.class);
