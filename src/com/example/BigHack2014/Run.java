@@ -1,8 +1,13 @@
 package com.example.BigHack2014;
 
+import android.graphics.Bitmap;
+
+import java.util.Date;
+
 public class Run {
     private long id;
-    private String comment;
+    private Bitmap bitmap;
+    private Date date;
 
     public long getId() {
         return id;
@@ -12,17 +17,26 @@ public class Run {
         this.id = id;
     }
 
-    public String getComment() {
-        return comment;
+    public Bitmap getBitmap() {
+        return bitmap;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setBitmap(Bitmap bitmap) {
+        this.bitmap = bitmap;
     }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
 
     // Will be used by the ArrayAdapter in the ListView
     @Override
     public String toString() {
-        return comment;
+        return date.toString();
     }
 }
