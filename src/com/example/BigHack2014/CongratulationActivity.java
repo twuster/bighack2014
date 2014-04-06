@@ -1,7 +1,7 @@
 package com.example.BigHack2014;
 
 import android.app.Activity;
-import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -17,10 +17,7 @@ import com.google.android.gms.location.LocationClient;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.LatLngBounds;
-import com.google.android.gms.maps.model.Polyline;
-import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.android.gms.maps.model.*;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -39,8 +36,9 @@ public class CongratulationActivity extends Activity implements GooglePlayServic
     EditText nameText;
     GoogleMap map;
     RunsDataSource datasource;
-    Context context;
+    Activity context;
     ArrayList<Parcelable> points;
+    LatLngBounds.Builder builder;
     /**
      * Called when the activity is first created.
      */
@@ -52,10 +50,10 @@ public class CongratulationActivity extends Activity implements GooglePlayServic
         if (extras!=null){
             points = extras.getParcelableArrayList("points");
         }
-        map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+        map = ((MapFragment) getFragmentManager().findFragmentById(R.id.congrat_map)).getMap();
         map.setMyLocationEnabled(true);
 
-        LatLngBounds.Builder builder = new LatLngBounds.Builder();
+        builder = new LatLngBounds.Builder();
         PolylineOptions options = new PolylineOptions();
         for (int i =0; i<points.size(); i++){
             options.add((LatLng)points.get(i));
@@ -64,9 +62,15 @@ public class CongratulationActivity extends Activity implements GooglePlayServic
         Polyline line = map.addPolyline(options
                 .width(5)
                 .color(Color.BLUE));
-        if(points.size()>0){
-            map.moveCamera(CameraUpdateFactory.newLatLngBounds(builder.build(), 16));
-        }
+        map.setOnCameraChangeListener(new GoogleMap.OnCameraChangeListener() {
+            @Override
+            public void onCameraChange(CameraPosition arg0) {
+                if(points.size()>0){
+                    map.moveCamera(CameraUpdateFactory.newLatLngBounds(builder.build(), 16));
+                }
+            }
+        });
+
 
         mLocationClient = new LocationClient(this, this, this);
         nameText = (EditText)findViewById(R.id.nameText);
@@ -85,7 +89,10 @@ public class CongratulationActivity extends Activity implements GooglePlayServic
                         run.setDate(new Date());
                         run.setName(nameText.getText().toString());
                         datasource.createRun(run);
-                        Toast.makeText(context, "Map Saved", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Run Saved", Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(context, MapListView.class);
+                        context.startActivity(i);
+                        context.finish();
                     }
                 });
             }
