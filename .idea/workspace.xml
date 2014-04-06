@@ -15,12 +15,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e01e9ee2-17b2-47da-bf4a-ccdb7f925138" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BigHack2014.iml" afterPath="$PROJECT_DIR$/BigHack2014.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/BigHack2014/CongratulationActivity.java" afterPath="$PROJECT_DIR$/src/com/example/BigHack2014/CongratulationActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/BigHack2014/MyActivity.java" afterPath="$PROJECT_DIR$/src/com/example/BigHack2014/MyActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/BigHack2014/RunsDataSource.java" afterPath="$PROJECT_DIR$/src/com/example/BigHack2014/RunsDataSource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.properties" afterPath="$PROJECT_DIR$/project.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/list_view.xml" afterPath="$PROJECT_DIR$/res/layout/list_view.xml" />
     </list>
     <ignored path="BigHack2014.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -87,7 +83,7 @@
       <file leaf-file-name="MyActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/MyActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="40" selection-start="679" selection-end="679" vertical-scroll-proportion="0.31987077" vertical-offset="108" max-vertical-offset="1008">
+            <state line="49" column="5" selection-start="1355" selection-end="1355" vertical-scroll-proportion="0.6219709" vertical-offset="389" max-vertical-offset="1008">
               <folding />
             </state>
           </provider>
@@ -685,7 +681,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/BigHack2014/MyActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="40" selection-start="679" selection-end="679" vertical-scroll-proportion="0.31987077" vertical-offset="108" max-vertical-offset="1008">
+        <state line="49" column="5" selection-start="1355" selection-end="1355" vertical-scroll-proportion="0.6219709" vertical-offset="389" max-vertical-offset="1008">
           <folding />
         </state>
       </provider>
